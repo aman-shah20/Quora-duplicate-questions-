@@ -1,10 +1,12 @@
 import streamlit as st
 import helper
 import requests, pickle
+from io import BytesIO
 
-url = "https://github.com/Abhavya-Singh02/Duplicate-Quora-Question_Pair/blob/main/model.pkl"
-model = pickle.loads(requests.get(url).content)
 
+url = "https://raw.githubusercontent.com/FriendUsername/RepoName/main/model.pkl"
+response = requests.get(url)
+model = pickle.load(BytesIO(response.content))
 # with gzip.open("model.pkl.gz", "rb") as f:
 #     model = pickle.load(f)
 
@@ -22,6 +24,7 @@ if st.button('Find'):
     else:
 
         st.header('Not Duplicate')
+
 
 
 
