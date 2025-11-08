@@ -1,10 +1,10 @@
 import streamlit as st
 import helper
-import pickle
-import gzip
+import gzip, pickle
 
 
-with gzip.open('model.pkl.gz', 'rb') as f:
+
+with gzip.open("model.pkl.gz", "rb") as f:
     model = pickle.load(f)
 
 st.header('Duplicate Question Pairs')
@@ -21,5 +21,6 @@ if st.button('Find'):
     else:
 
         st.header('Not Duplicate')
+
 
 
