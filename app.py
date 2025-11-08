@@ -5,7 +5,7 @@ import gzip
 
 
 with gzip.open('model.pkl.gz', 'rb') as f:
-    model = pickle.load(f)
+    model.pkl = pickle.load(f)
 
 st.header('Duplicate Question Pairs')
 
@@ -21,3 +21,4 @@ if st.button('Find'):
     else:
 
         st.header('Not Duplicate')
+
