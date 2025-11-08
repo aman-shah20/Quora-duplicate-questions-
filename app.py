@@ -1,15 +1,9 @@
 import streamlit as st
 import helper
-import requests, pickle
-from io import BytesIO
+import pickle
 
 
-url = "https://raw.githubusercontent.com/FriendUsername/RepoName/main/model.pkl"
-response = requests.get(url)
-model = pickle.load(BytesIO(response.content))
-# with gzip.open("model.pkl.gz", "rb") as f:
-#     model = pickle.load(f)
-
+model = pickle.load(open('model.pkl','rb'))
 st.header('Duplicate Question Pairs')
 
 q1 = st.text_input('Enter question 1')
@@ -24,6 +18,7 @@ if st.button('Find'):
     else:
 
         st.header('Not Duplicate')
+
 
 
 
