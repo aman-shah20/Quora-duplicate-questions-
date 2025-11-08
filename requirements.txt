@@ -1,0 +1,8 @@
+streamlit==1.47.1
+scikit-learn>=1.3.0
+beautifulsoup4
+lxml
+fuzzywuzzy
+python-Levenshtein
+numpy
+distance
