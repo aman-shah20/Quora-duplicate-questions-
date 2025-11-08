@@ -1,6 +1,6 @@
 import streamlit as st
 import helper
-import gzip, pickle
+import requests, pickle
 
 url = "https://github.com/Abhavya-Singh02/Duplicate-Quora-Question_Pair/blob/main/model.pkl"
 model = pickle.loads(requests.get(url).content)
@@ -22,6 +22,7 @@ if st.button('Find'):
     else:
 
         st.header('Not Duplicate')
+
 
 
 
